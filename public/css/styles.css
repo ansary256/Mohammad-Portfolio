@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'vazir';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/fonts/Vazir.ttf');
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF;
+}
+
+@font-face {
+  font-family: 'roboto';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/fonts/Roboto-Bold.ttf');
+  font-display: swap;
+}
