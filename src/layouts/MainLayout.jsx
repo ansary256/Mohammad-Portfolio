@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles'; 
 import { CacheProvider } from '@emotion/react';
 
 import { rtlCache } from '../UIComponent/RTLCache';
