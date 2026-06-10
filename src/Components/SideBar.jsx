@@ -7,13 +7,19 @@ import { grey } from "@mui/material/colors";
 
 const SideBar = () => {
     return (
-        <Grid item size={{
+        <Grid size={{
             xs: 0,
             sm: 0,
             md: 3,
             lg: 3,
             xl: 3
-        }} sx={{ bgcolor: grey[900], height:"100vh"}}>
+        }} sx={{ bgcolor: grey[900], height:"100vh", display:{
+            xs:"none",
+            sm:"none",
+            md:"block",
+            lg:"block",
+            xl:"block",
+        }}}>
             <Box
                 sx={{
                     textAlign:"center",

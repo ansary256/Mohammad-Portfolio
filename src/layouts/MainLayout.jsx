@@ -13,7 +13,7 @@ const MainLayout = ({chidren}) => {
             <ThemeProvider theme={theme}>
                 <Grid container spacing={2}>
                     <SideBar/>
-                    <Grid item size={{
+                    <Grid size={{
                         xs: 12,
                         sm: 12,
                         md: 9,
