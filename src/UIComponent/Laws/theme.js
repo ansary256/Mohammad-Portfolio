@@ -40,9 +40,6 @@ export const theme = createTheme({
             "Tahoma",
             "Arial",
             "sans-serif"
-        ].join(','),
-        h3:{
-            textShadow:"-2px 4px 5px #607D8B"
-        }
+        ].join(',')
     },
 });
