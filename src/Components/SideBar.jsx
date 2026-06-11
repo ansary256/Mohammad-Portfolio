@@ -8,16 +8,19 @@ import { HomeRounded, ConnectWithoutContactRounded, DashboardCustomizeRounded, M
     from '@mui/icons-material';
 
 
-const SideBar = () => {
+const SideBar = ({isMobile}) => {
     return (
         <Grid2
-            xs={0}
-            sm={0}
+            xs={isMobile ? 12 : 0} // Stretch full width if inside the mobile drawer panel
+            sm={isMobile ? 12 : 0}
             md={3}
             lg={3}
             xl={3}
             sx={{
-                bgcolor: grey[900], height: "100vh", display: {
+                bgcolor: grey[900],
+                height: "100vh",
+                // 2. FIXED: If inside the mobile drawer, force display to block!
+                display: isMobile ? "block" : {
                     xs: "none",
                     sm: "none",
                     md: "block",
