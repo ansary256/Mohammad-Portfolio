@@ -8,7 +8,13 @@ import { HomeRounded, ConnectWithoutContactRounded, DashboardCustomizeRounded, M
     from '@mui/icons-material';
 
 
-const SideBar = ({isMobile}) => {
+const SideBar = ({ isMobile, handleChange, value }) => {
+    const tabProps = (index) => {
+        return {
+            id: `sidebar-tab-${index}`,
+            "aria-controls": `tabpanel-${index}`
+        }
+    }
     return (
         <Grid2
             xs={isMobile ? 12 : 0} // Stretch full width if inside the mobile drawer panel
@@ -50,13 +56,28 @@ const SideBar = ({isMobile}) => {
             <Tabs
                 variant="scrollable"
                 orientation="vertical"
+                value={value}
+                onChange={handleChange}
                 allowScrollButtonsMobile
+                textColor="primary"
+                TabIndicatorProps={{
+                    style: {
+                        width: '10px',             // 🌟 Default is 2px. Changing this to 6px makes it look bold and premium!
+                        backgroundColor: "#fff", // You can also match it to your avatar border color
+                        borderRadius: '0 3px 10px 0' // Optional: Gives the line soft rounded corners
+                    }
+                }}
             >
-                <Tab label="صفحه اصلی" icon={<HomeRounded />} iconPosition="start" />
-                <Tab label="نمونه کار" icon={<DashboardCustomizeRounded />} iconPosition="start" />
-                <Tab label="رزومه" icon={<InfoRounded />} iconPosition="start" />
-                <Tab label="ارتباط با من" icon={<ConnectWithoutContactRounded />} iconPosition="start" />
-                <Tab label="درباره من" icon={<MoodRounded />} iconPosition="start" />
+                <Tab label="صفحه اصلی" icon={<HomeRounded />} iconPosition="start" {...tabProps(0)}
+                    sx={{ color: "whitesmoke" }} />
+                <Tab label="نمونه کار" icon={<DashboardCustomizeRounded />} iconPosition="start" {...tabProps(1)}
+                    sx={{ color: "whitesmoke" }} />
+                <Tab label="رزومه" icon={<InfoRounded />} iconPosition="start" {...tabProps(2)} sx={{ color: "whitesmoke" }}
+                />
+                <Tab label="ارتباط با من" icon={<ConnectWithoutContactRounded />} iconPosition="start" {...tabProps(3)}
+                    sx={{ color: "whitesmoke" }} />
+                <Tab label="درباره من" icon={<MoodRounded />} iconPosition="start" {...tabProps(4)}
+                    sx={{ color: "whitesmoke" }} />
             </Tabs>
         </Grid2>
     )
