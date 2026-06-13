@@ -4,6 +4,7 @@ import MainLayout from "./layouts/MainLayout";
 import SideBar from "./Components/SideBar";
 import ContentContainer from "./Components/ContentContainer";
 import { useState } from "react";
+import BTNMenu from "./Components/BTNMenu";
 
 function App() {
 
@@ -15,8 +16,9 @@ function App() {
 
   return (
     <MainLayout>
+      <BTNMenu/>
       <SideBar value={value} handleChange={handleChange} />
-      <ContentContainer />
+      <ContentContainer value={value} />
     </MainLayout>
   );
 }
