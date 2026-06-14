@@ -5,6 +5,7 @@ import SideBar from "./Components/SideBar";
 import ContentContainer from "./Components/ContentContainer";
 import { useState } from "react";
 import BTNMenu from "./Components/BTNMenu";
+import TabPanel from "./Components/Tabs/TabPanel";
 
 function App() {
 
@@ -16,9 +17,15 @@ function App() {
 
   return (
     <MainLayout>
-      <BTNMenu/>
-      <SideBar value={value} handleChange={handleChange} />
-      <ContentContainer value={value} />
+      <BTNMenu />
+      <SideBar value={value} handleChange={handleChange} isMobile={false}/>
+      <ContentContainer value={value}>
+        <TabPanel value={value} index={0}><h3>اسلاید 1</h3></TabPanel>
+        <TabPanel value={value} index={1}><h3>اسلاید 2</h3></TabPanel>
+        <TabPanel value={value} index={2}><h3>اسلاید 3</h3></TabPanel>
+        <TabPanel value={value} index={3}><h3>اسلاید 4</h3></TabPanel>
+        <TabPanel value={value} index={4}><h3>اسلاید 5</h3></TabPanel>
+      </ContentContainer>
     </MainLayout>
   );
 }

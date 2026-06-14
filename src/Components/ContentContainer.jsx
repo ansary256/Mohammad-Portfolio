@@ -12,7 +12,9 @@ const ContentContainer = ({children}) => {
             md={9}
             lg={9}
             xl={9}
+            sx={{height:"100vh", overflowY:"scroll"}}
         >
+            {children}
         </Grid2>
     )
 }

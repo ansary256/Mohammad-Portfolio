@@ -17,14 +17,14 @@ const BTNMenu = () => {
             < Fab
                 color="primary"
                 onClick={handleDrawerToggle}
+                aria-label='Sidebar'
                 sx={{
                     position: 'fixed',
-                    top: 20,
-                    right: 20, // Automatically snaps to the correct side in RTL
+                    top: 10,
+                    left: 10, // Automatically snaps to the correct side in RTL
                     zIndex: 1300, // Makes sure it floats above everything
                     display: { xs: 'flex', md: 'none' }
-                }
-                }
+                }}
             >
                 <MenuIcon />
             </Fab >
