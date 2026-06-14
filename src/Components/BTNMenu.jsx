@@ -4,7 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SideBar from './SideBar';
 
 
-const BTNMenu = () => {
+const BTNMenu = ({ handleChange, value }) => {
     const [mobileOpen, setMobileOpen] = useState(false);
 
     const handleDrawerToggle = () => {
@@ -42,7 +42,7 @@ const BTNMenu = () => {
                     },
                 }}
             >
-                <SideBar isMobile={true} />
+                <SideBar isMobile={true} handleChange={handleChange} value={value} />
             </Drawer>
         </>
 

@@ -67,9 +67,18 @@ const SideBar = ({ isMobile, handleChange, value }) => {
                         borderRadius: '0 3px 10px 0' // Optional: Gives the line soft rounded corners
                     }
                 }}
+                sx={{
+                    '& .MuiTab-root': {
+                        minHeight: '55px',
+                        padding: "10px 40px",
+                        justifyContent: "flex-start"
+                    }
+                }}
             >
                 <Tab label="صفحه اصلی" icon={<HomeRounded />} iconPosition="start" {...tabProps(0)}
-                    sx={{ color: "whitesmoke" }} />
+                    sx={{
+                        color: "whitesmoke"
+                    }} />
                 <Tab label="نمونه کار" icon={<DashboardCustomizeRounded />} iconPosition="start" {...tabProps(1)}
                     sx={{ color: "whitesmoke" }} />
                 <Tab label="رزومه" icon={<InfoRounded />} iconPosition="start" {...tabProps(2)} sx={{ color: "whitesmoke" }}
@@ -79,6 +88,16 @@ const SideBar = ({ isMobile, handleChange, value }) => {
                 <Tab label="درباره من" icon={<MoodRounded />} iconPosition="start" {...tabProps(4)}
                     sx={{ color: "whitesmoke" }} />
             </Tabs>
+            <Divider sx={{ marginTop: "10px" }} variant="middle" />
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+                <Avatar src={require("../Assets/Imgs/logoM.png")}
+                    sx={{
+                        width: 100, height: 100,
+                    }} variant="circular"></Avatar>
+                <Typography variant="subtitle1" sx={{
+                    fontWeight: "600"
+                }}>طراحی و توسعه وبسایت های مدرن</Typography>
+            </Box>
         </Grid2>
     )
 }

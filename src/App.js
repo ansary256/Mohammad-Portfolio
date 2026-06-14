@@ -16,9 +16,9 @@ function App() {
   }
 
   return (
-    <MainLayout>
-      <BTNMenu />
-      <SideBar value={value} handleChange={handleChange} isMobile={false}/>
+    <MainLayout value={value} handleChange={handleChange}>
+      <BTNMenu value={value} handleChange={handleChange} />
+      <SideBar value={value} handleChange={handleChange} isMobile={false} />
       <ContentContainer value={value}>
         <TabPanel value={value} index={0}><h3>اسلاید 1</h3></TabPanel>
         <TabPanel value={value} index={1}><h3>اسلاید 2</h3></TabPanel>

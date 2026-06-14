@@ -6,8 +6,8 @@ import Grid2 from '@mui/material/Unstable_Grid2';
 import { rtlCache } from '../UIComponent/Laws/RTLCache';
 import { theme } from "../UIComponent/Laws/theme";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-const MainLayout = ({ children }) => {
-    
+const MainLayout = ({ children, handleChange, value }) => {
+
     return (
         <CacheProvider value={rtlCache}>
             <ThemeProvider theme={theme}>
