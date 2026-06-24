@@ -1,15 +1,12 @@
 import { Drawer, Fab } from '@mui/material';
-import { useState } from 'react';
+import { useContext } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import SideBar from './SideBar';
+import SideBar from './SideBar/SideBar';
+import { MainContext } from '../contexts/MainProvider';
 
 
-const BTNMenu = ({ handleChange, value }) => {
-    const [mobileOpen, setMobileOpen] = useState(false);
-
-    const handleDrawerToggle = () => {
-        setMobileOpen(!mobileOpen);
-    };
+const BTNMenu = () => {
+    const { handleDrawerToggle, mobileOpen } = useContext(MainContext);
     return (
         // State to handle the sliding menu on mobile
         //  FLOATING ACTION BUTTON(FAB): Only visible on mobile / tablet
@@ -42,7 +39,7 @@ const BTNMenu = ({ handleChange, value }) => {
                     },
                 }}
             >
-                <SideBar isMobile={true} handleChange={handleChange} value={value} />
+                <SideBar isMobile={true} />
             </Drawer>
         </>
 

@@ -2,7 +2,7 @@
 import Grid2 from '@mui/material/Unstable_Grid2';
 
 
-const ContentContainer = ({ children, value }) => {
+const ContentContainer = ({ children }) => {
     return (
         <Grid2
             xs={12}
@@ -10,7 +10,6 @@ const ContentContainer = ({ children, value }) => {
             md={9}
             lg={9}
             xl={9}
-            sx={{ height: "100vh", overflowY: "auto" }}
         >
             {children}
         </Grid2>

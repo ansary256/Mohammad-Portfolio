@@ -1,10 +1,12 @@
 import { Box } from "@mui/material";
+import { useContext } from "react";
+import { MainContext } from "../../contexts/MainProvider";
 
 
 
 
-const TabPanel = ({ children, value, index, ...other }) => {
-    
+const TabPanel = ({ children, index, other}) => {
+    const { pageNumberValue: value } = useContext(MainContext);
     return (
         <div
             role="tabpanel"
