@@ -9,9 +9,9 @@ import { MainProvider } from "./contexts/MainProvider";
 
 
 
-import { Box } from "@mui/material";
-import HomepageImg from "./Assets/Imgs/HomePage.webp";
 import HomePageContainer from "./Components/Home/HomePageContainer";
+import HeaderHomePage from "./Components/Home/HeaderHomePage";
+import BodyHomePage from "./Components/Home/BodyHomePage";
 
 
 
@@ -24,21 +24,10 @@ function App() {
         <SideBar isMobile={false} />
         <ContentContainer>
           <TabPanel index={0}>
-            <Box
-              sx={{
-                //back image
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(${HomepageImg})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                width: "100%",
-                height: "100vh",
-                overflowX: "hidden",
-                overflowY: "auto"
-              }}
-            >
-              <HomePageContainer />
-            </Box>
+            <HomePageContainer>
+              <HeaderHomePage />
+              <BodyHomePage />
+            </HomePageContainer>
           </TabPanel>
           <TabPanel index={1}><h3>اسلاید 2</h3></TabPanel>
           <TabPanel index={2}><h3>اسلاید 3</h3></TabPanel>

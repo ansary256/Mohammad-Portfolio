@@ -29,7 +29,7 @@ const BTNMenu = () => {
                 anchor="left"
                 open={mobileOpen}
                 onClose={handleDrawerToggle}
-                variant="temporary"
+                variant="temporary" 
                 ModalProps={{ keepMounted: true }}
                 sx={{
                     display: { xs: 'block', md: 'none' },

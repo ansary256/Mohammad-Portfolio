@@ -1,23 +1,26 @@
 import { grey } from "@mui/material/colors";
-import Grid2 from "@mui/material/Unstable_Grid2";
+import Grid from "@mui/material/Grid";
 import SidebarHeader from "./SidebarHeader";
 import SidebarTabsComponent from "./SidebarTabsComponent";
 import SidebarFooter from "./SidebarFooter";
 import { Divider } from "@mui/material";
 
-
 const SideBar = ({ isMobile }) => {
     return (
-        <Grid2
-            xs={isMobile ? 12 : 0} // Stretch full width if inside the mobile drawer panel
-            sm={isMobile ? 12 : 0}
-            md={3}
-            lg={3}
-            xl={3}
+        <Grid
+            // 🟢 ۱. اصلاح ساختار گرید طبق استاندارد MUI v9 با پراپ size
+            size={{
+                xs: isMobile ? 12 : 0, 
+                sm: isMobile ? 12 : 0,
+                md: 3,
+                lg: 3,
+                xl: 3
+            }}
             sx={{
-                bgcolor: grey[900],
+                // 🟢 ۲. اضافه کردن تمپلیت رنگی مطمئن برای لایوت‌های نسخه ۹
+                backgroundColor: grey[900],
+                color: "whitesmoke", // ست کردن رنگ متن پایه برای فرزندان سایدبار
                 height: "100vh",
-                // 2. FIXED: If inside the mobile drawer, force display to block!
                 display: isMobile ? "block" : {
                     xs: "none",
                     sm: "none",
@@ -25,14 +28,16 @@ const SideBar = ({ isMobile }) => {
                     lg: "block",
                     xl: "block",
                 },
-                overflowY:"auto"
-            }}>
+                overflowY: "auto"
+            }}
+        >
             <SidebarHeader />
-            <Divider sx={{ marginTop: "10px" }} variant="middle" />
+            <Divider sx={{ marginTop: "10px", borderColor: "rgba(255,255,255,0.1)" }} variant="middle" />
             <SidebarTabsComponent />
-            <Divider sx={{ marginTop: "10px" }} variant="middle" />
+            <Divider sx={{ marginTop: "10px", borderColor: "rgba(255,255,255,0.1)" }} variant="middle" />
             <SidebarFooter />
-        </Grid2>
-    )
-}
+        </Grid>
+    );
+};
+
 export default SideBar;

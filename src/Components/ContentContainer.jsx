@@ -1,18 +1,20 @@
-
-import Grid2 from '@mui/material/Unstable_Grid2';
-
+import Grid from '@mui/material/Grid';
 
 const ContentContainer = ({ children }) => {
     return (
-        <Grid2
-            xs={12}
-            sm={12}
-            md={9}
-            lg={9}
-            xl={9}
+        <Grid
+            // 🟢 آپدیت به نسخه ۹: انتقال پراپ‌های قدیمی به ساختار متمرکز size
+            size={{
+                xs: 12,
+                sm: 12,
+                md: 9,
+                lg: 9,
+                xl: 9
+            }}
         >
             {children}
-        </Grid2>
-    )
-}
+        </Grid>
+    );
+};
+
 export default ContentContainer;
