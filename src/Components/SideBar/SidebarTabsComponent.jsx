@@ -16,7 +16,7 @@ const SidebarTabsComponent = () => {
 
     const sidebarTabs = [
         { label: "صفحه اصلی", icon: <HomeRounded />, index: 0 },
-        { label: "نمونه کار", icon: <DashboardCustomizeRounded />, index: 1 },
+        { label: "مسیر حرکت", icon: <DashboardCustomizeRounded />, index: 1 },
         { label: "رزومه", icon: <InfoRounded />, index: 2 },
         { label: "ارتباط با من", icon: <ConnectWithoutContactRounded />, index: 3 },
         { label: "درباره من", icon: <MoodRounded />, index: 4 },

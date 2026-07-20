@@ -6,6 +6,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^9.1.1",
+    "@mui/lab": "^9.0.0-beta.6",
     "@mui/material": "^9.1.2",
     "@mui/stylis-plugin-rtl": "^7.3.8",
     "@testing-library/dom": "^10.4.1",
@@ -14,6 +15,7 @@
     "@testing-library/user-event": "^13.5.0",
     "ajv": "^8.18.0",
     "ajv-keywords": "^5.1.0",
+    "formik": "^2.4.9",
     "gsap": "^3.15.0",
     "helmet": "^8.2.0",
     "react": "^19.2.4",
@@ -22,8 +24,10 @@
     "react-icons": "^5.6.0",
     "react-router-dom": "^7.13.0",
     "react-scripts": "5.0.1",
+    "react-transition-group": "^4.4.5",
     "stylis": "^4.3.6",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.7.1"
   },
   "scripts": {
     "start": "react-scripts start",

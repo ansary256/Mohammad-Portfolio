@@ -6,8 +6,8 @@ import { MainContext } from "../../../contexts/MainProvider";
 import SkillCard from "./SkillCard";
 
 // امپورت لوگوها
-import { FaReact, FaPython, FaJava, FaHtml5, FaCss3 } from "react-icons/fa";
-import { SiBootstrap, SiDotnet, SiJavascript, SiJquery, SiSass, SiSharp } from "react-icons/si";
+import { FaReact, FaPython, FaJava, FaHtml5, FaCss3, FaDatabase } from "react-icons/fa";
+import { SiBootstrap, SiDotnet, SiJavascript, SiJquery, SiMysql, SiSass, SiSharp } from "react-icons/si";
 import { GitHub } from "@mui/icons-material";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -33,7 +33,9 @@ const SkillsSection = () => {
         { name: "JavaScript", value: 80, logo: <SiJavascript size={45} color="#f7df1e" />, coursePlace: "آکادمی کدیاد", courseYear: "1399-1400" },
         { name: "Git && GitHub", value: 80, logo: <GitHub size={50} color="#ffffff" />, coursePlace: "خودآموز", courseYear: "1403" },
         { name: "Jquery", value: 70, logo: <SiJquery size={45} color="#0769ad" />, coursePlace: "آموزشگاه خیام نوین", courseYear: "1400" },
-        { name: "BootStrap", value: 95, logo: <SiBootstrap size={45} color="#7952b3" />, coursePlace: "آموزشگاه خیام نوین", courseYear: "1399" }
+        { name: "BootStrap", value: 95, logo: <SiBootstrap size={45} color="#7952b3" />, coursePlace: "آموزشگاه خیام نوین", courseYear: "1399" },
+        { name: "My SQL", value: 75, logo: <SiMysql size={45} color="#7952b3" />, coursePlace: "آموزشگاه خیام نوین", courseYear: "1399" },
+        { name: "SQL SERVER", value: 75, logo: <FaDatabase size={45} color="#7952b3" />, coursePlace: "آموزشگاه خیام نوین", courseYear: "1399" }
     ];
 
     useEffect(() => {
@@ -67,7 +69,7 @@ const SkillsSection = () => {
         <Grid container
             ref={containerRef}
         >
-            <Grid size={{ xs: 12 }} sx={{ mt: {xs:"40px",sm:"70px",md:"0"}, display: "flex", justifyContent: "center" }}>
+            <Grid size={{ xs: 12 }} sx={{ mt: { xs: "80px", sm: "70px", md: "0" }, display: "flex", justifyContent: "center" }}>
                 {/* عنوان بخش مهارت‌ها */}
                 <Typography
                     variant="h4"
@@ -81,21 +83,27 @@ const SkillsSection = () => {
                 >
                     Skills
                 </Typography>
+
             </Grid>
-            <Divider variant="middle" />
-            <Grid size={{ xs: 12, sm: 12, md: 4, lg: 3, xl: 2 }} >
-                {SkillsArray.map((s, index) => (
-                    <Grid
-                        sx={{ m: "25px 0" }}
-                        key={s.name} // رفع باگ مپ ری‌آکت
-                        size={{ xs: 12, sm: 6, md: 4, lg: 3 }} // ریسپانسیو عالی در MUI v9
-                        className="skill-card-anim"
-                        onClick={() => handleOpenDetails(s)} // 🟢 رویداد کلیک
-                    >
-                        <SkillCard name={s.name} value={s.value} logo={s.logo} />
-                    </Grid>
-                ))}
+            <Grid size={{ xs: 12 }} sx={{ width: "100%", px: 4, mb: 6 }}>
+                <Divider sx={{ backgroundColor: "whitesmoke" }} variant="middle" />
             </Grid>
+            {SkillsArray.map((s, index) => (
+                <Grid size={{ xs: 12, sm: 6, md: 6, lg: 4, xl: 3 }}
+                    key={s.name}
+                    sx={{
+                        m: "25px 0",
+                        boxSizing: "border-box",
+                        display: "flex",         // 🟢 اضافه کن تا کارت در ستون خودش شناور شود
+                        alignItems: "center",
+                        justifyContent: "center" // 🟢 کارت‌ها را در حالت موبایل دقیقاً وسط‌چین می‌کند
+                    }}
+                    className="skill-card-anim"
+                    onClick={() => handleOpenDetails(s)} // 🟢 رویداد کلیک
+                >
+                    <SkillCard name={s.name} value={s.value} logo={s.logo} />
+                </Grid>
+            ))}
 
             {/* 🟢 پنجره آلرت سفارشی و شیک (Dialog ماتیریال) */}
             <Dialog
@@ -146,7 +154,7 @@ const SkillsSection = () => {
                                 onClick={() => setOpen(false)}
                                 sx={{
                                     color: "#61dafb",
-                                    p: "5px 0",
+                                    p: 3,
                                     fontWeight: "bold",
                                     "&:hover": { backgroundColor: "rgba(97, 218, 251, 0.08)" }
                                 }}

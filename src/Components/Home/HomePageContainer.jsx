@@ -4,6 +4,7 @@ import { useContext } from "react";
 
 import HomepageImg from "../../Assets/Imgs/HomePage.webp";
 
+
 const HomePageContainer = ({ children }) => {
     const { homePageScrollerRef } = useContext(MainContext);
     return (
@@ -18,7 +19,7 @@ const HomePageContainer = ({ children }) => {
                 width: "100%",
                 height: "100vh",
                 overflowX: "hidden",
-                overflowY: "auto"
+                overflowY: "auto",
             }}>
             {children}
         </Box>

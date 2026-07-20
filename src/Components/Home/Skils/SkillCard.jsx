@@ -5,7 +5,8 @@ const SkillCard = ({ name = "PYTHON", value = 85, logo }) => {
     return (
         <Box
             sx={{
-                width: "240px",
+                width: "100%",
+                maxWidth:"260px",
                 height: "280px",
                 borderRadius: "20px",
                 background: "linear-gradient(145deg, #2b2b2b, #181818)", // تم متالیک دارک هماهنگ با وی‌اس‌کد
@@ -71,7 +72,7 @@ const SkillCard = ({ name = "PYTHON", value = 85, logo }) => {
                     }}
                 />
 
-                {/* نشانگر متنی درصد مهارت (بالای دایره داخل کادر) */}
+                {/* نشانگر متنی درصد مهارت (بالای دایره داخل کادر)
                 <Box
                     sx={{
                         position: "absolute",
@@ -86,7 +87,7 @@ const SkillCard = ({ name = "PYTHON", value = 85, logo }) => {
                     <Typography sx={{ color: "#dcdcaa", fontSize: "0.7rem", fontWeight: "bold" }}>
                         {value}%
                     </Typography>
-                </Box>
+                </Box> */}
 
                 {/* ۲. لوگوی مرکزی وسط دایره */}
                 <Box 

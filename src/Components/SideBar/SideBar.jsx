@@ -1,4 +1,4 @@
-import { grey } from "@mui/material/colors";
+// import { grey } from "@mui/material/colors";
 import Grid from "@mui/material/Grid";
 import SidebarHeader from "./SidebarHeader";
 import SidebarTabsComponent from "./SidebarTabsComponent";
@@ -18,7 +18,7 @@ const SideBar = ({ isMobile }) => {
             }}
             sx={{
                 // 🟢 ۲. اضافه کردن تمپلیت رنگی مطمئن برای لایوت‌های نسخه ۹
-                backgroundColor: grey[900],
+                backgroundColor: "common.black",
                 color: "whitesmoke", // ست کردن رنگ متن پایه برای فرزندان سایدبار
                 height: "100vh",
                 display: isMobile ? "block" : {
